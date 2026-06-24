@@ -1,0 +1,53 @@
+**Casos de prueba negativos**
+
+A continuación, se presentan cinco casos de prueba negativos para la funcionalidad de adherir una tarjeta de crédito al débito automático:
+
+**Caso 1: Campo obligatorio vacío**
+
+* Caso:
+ + Acceder al menú de configuración de tarjetas de crédito
+ + Seleccionalo la opción "Adherir tarjeta a débito automático"
+ + Dejar el campo de descripción vacío
+ + Presionar el botón "Guardar cambios"
+* Resultado esperado:
+ + Error de validación: "Campo obligatorio vacío, por favor introduce una descripción para la operación"
+
+**Caso 2: Valor inválido en fecha vencimiento**
+
+* Caso:
+ + Acceder al menú de configuración de tarjetas de crédito
+ + Seleccionalo la opción "Adherir tarjeta a débito automático"
+ + Introducir una fecha de vencimiento válida (por ejemplo, 12/31/2025)
+ + Presionar el botón "Guardar cambios"
+* Resultado esperado:
+ + Error de validación: "Fecha de vencimiento inválida. Por favor introduce una fecha en el formato dd/mm/yyyy"
+
+**Caso 3: Campo rango de débito fuera de rango**
+
+* Caso:
+ + Acceder al menú de configuración de tarjetas de crédito
+ + Seleccionalo la opción "Adherir tarjeta a débito automático"
+ + Introducir un valor de débito que esté fuera del rango permitido (por ejemplo, 1000.000.000)
+ + Presionar el botón "Guardar cambios"
+* Resultado esperado:
+ + Error de validación: "Valor de débito fuera de rango. Por favor introduce un valor entre 1.000,00 y 9.999.999,99"
+
+**Caso 4: Error de integración con sistema bancario**
+
+* Caso:
+ + Acceder al menú de configuración de tarjetas de crédito
+ + Seleccionalo la opción "Adherir tarjeta a débito automático"
+ + Intentar guardar cambios sin conexión a internet (simulando una falla de integración)
+ + Presionar el botón "Guardar cambios"
+* Resultado esperado:
+ + Error de integración: "Error al conectarse con el sistema bancario. Por favor intenta nuevamente más tarde"
+
+**Caso 5: Tarjeta no asociada a cuenta**
+
+* Caso:
+ + Acceder al menú de configuración de tarjetas de crédito
+ + Seleccionalo la opción "Adherir tarjeta a débito automático"
+ + Introducir una tarjeta que no esté asociada a su cuenta bancaria
+ + Presionar el botón "Guardar cambios"
+* Resultado esperado:
+ + Error de validación: "Tarjeta no asociada a cuenta. Por favor asegúrese de que la tarjeta esté correctamente asociada a su cuenta"

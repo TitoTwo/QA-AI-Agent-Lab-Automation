@@ -1,0 +1,36 @@
+Aquí te presento 5 casos de prueba negativos para la historia proporcionada:
+
+**Caso 1: Ingreso de valor nulo**
+
+* Caso:
+Como cliente, ingreso un valor de 0 para el pago de la tarjeta de crédito.
+* Resultado esperado:
+La transacción no se puede procesar debido a que el valor es menor que el mínimo permitido (por ejemplo, 100).
+
+**Caso 2: Ingreso de valor negativo**
+
+* Caso:
+Como cliente, ingreso un valor negativo para el pago de la tarjeta de crédito.
+* Resultado esperado:
+La transacción se rechaza debido a que el valor no puede ser negativo.
+
+**Caso 3: Ingreso de valor mayor al límite**
+
+* Caso:
+Como cliente, ingreso un valor mayor al límite máximo permitido para el pago de la tarjeta de crédito (por ejemplo, 10000).
+* Resultado esperado:
+La transacción se rechaza debido a que el valor supera el límite establecido.
+
+**Caso 4: Falta de campo obligatorio**
+
+* Caso:
+Como cliente, no ingreso el campo "Número de cuotas" para el pago de la tarjeta de crédito.
+* Resultado esperado:
+La transacción se rechaza debido a que el campo es obligatorio.
+
+**Caso 5: Error de integración con sistema de pago**
+
+* Caso:
+Como cliente, intento realizar una transacción financiada pero el sistema de pago falla debido a un error interno.
+* Resultado esperado:
+La transacción se rechaza y se muestra un mensaje de error que indica que el pago no se ha podido completar debido a problemas en el sistema.

@@ -1,0 +1,29 @@
+**Análisis de Riesgos**
+
+A continuación, se presentan los riesgos identificados para el proceso de actualización de la dirección de correo electrónico:
+
+**Riesgos Funcionales**
+
+1. **Excepciones al usuario**: ¿Qué sucede si el usuario no ingresa la nueva dirección de correo electrónico correctamente? ¿Se bloqueará la cuenta o se permitirá que continue con la actualización?
+2. **Cambio inesperado en la base de datos**: ¿Qué pasa si hay un error en la base de datos mientras se actualiza la dirección de correo electrónico del usuario? ¿Se perderá la información o se producirá una inconsistencia en los registros?
+3. **Sincronización con otros sistemas**: ¿Qué sucede si el nuevo registro de dirección de correo electrónico no se sincroniza correctamente con otros sistemas, como CRM o sistemas de gestión de notificaciones?
+
+**Riesgos Técnicos**
+
+1. **Seguridad y privacidad**: ¿Se garantiza que la nueva dirección de correo electrónico del usuario sea segura y privada? ¿Qué medidas se toman para protegerla contra accesos no autorizados?
+2. **Compatibilidad con dispositivos y software**: ¿Se garantiza que el nuevo sistema de notificaciones sea compatible con diferentes dispositivos y software utilizados por los usuarios?
+3. **Desarrollo y mantenimiento**: ¿Quién es responsable del desarrollo y mantenimiento del nuevo sistema de notificaciones? ¿Qué recursos se asignan para asegurarse de que el sistema funcione correctamente?
+
+**Caso Borde**
+
+1. **Duplicación de registros**: ¿Qué sucede si un usuario intenta actualizar la misma dirección de correo electrónico dos veces? ¿Se produce una duplicación de registros en la base de datos?
+2. **Restauración de datos**: ¿Qué pasa si se precisa restaurar los datos del sistema después de una falla o actualización incorrecta? ¿Se perderán los cambios realizados por el usuario?
+
+**Recomendaciones**
+
+Para mitigar estos riesgos, es recomendable:
+
+* Implementar controles de acceso y autorizaciones para asegurarse de que solo los usuarios autorizados puedan actualizar la dirección de correo electrónico.
+* Realizar pruebas exhaustivas antes de lanzar el nuevo sistema de notificaciones para asegurarse de que funcione correctamente y no produce errores críticos.
+* Establecer procedimientos claros para manejar excepciones y errores, como la duplicación de registros o la restauración de datos.
+* Asignar recursos adecuados para el desarrollo y mantenimiento del nuevo sistema de notificaciones.

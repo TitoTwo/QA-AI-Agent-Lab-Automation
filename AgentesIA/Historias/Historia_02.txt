@@ -1,0 +1,2 @@
+Como cliente quiero solicitar la reposición de mi tarjeta de crédito
+para continuar operando cuando la tarjeta actual esté dañada.

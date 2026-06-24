@@ -1,0 +1,13 @@
+Basándome únicamente en la historia proporcionada, puedo generar los siguientes criterios de aceptación:
+
+Criterio 1: La aplicación permite actualizar la dirección de correo electrónico actual.
+
+Verificación: El usuario puede acceder a un menú de configuración donde puede editar su dirección de correo electrónico.
+
+Criterio 2: Una vez que el usuario haya actualizado su dirección de correo electrónico, se debe reflejar en la interfaz de usuario.
+
+Verificación: Después de realizar la acción de actualizar la dirección de correo electrónico, la aplicación muestra la nueva dirección de correo electrónico como información del usuario.
+
+Criterio 3: La aplicación permite seleccionar una nueva casilla para recibir notificaciones.
+
+Verificación: El usuario puede acceder a un menú donde puede elegir entre diferentes opciones de casillas para recibir notificaciones.

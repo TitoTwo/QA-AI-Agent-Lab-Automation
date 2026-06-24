@@ -1,0 +1,31 @@
+¡Claro! Aquí tienes un ejemplo de cómo generar datos de prueba en formato CSV para simular una solicitud de actualizar la dirección de correo electrónico para recibir notificaciones en una nueva casilla.
+
+**Datos de prueba:**
+
+```csv
+"Usuario", "Correo electrónico actual", "Nuevo correo electrónico", "Nombre", "Apellido"
+"testuser1", "testuser1@example.com", "newuser1@example.com", "Juan", "Pérez"
+"testuser2", "testuser2@example.com", "newuser2@example.com", "Ana", "Gómez"
+"testuser3", "testuser3@example.com", "newuser3@example.com", "Carlos", "Díaz"
+```
+
+En este ejemplo, se generan tres registros de prueba con información de usuario, correo electrónico actual y nuevo. Los correos electrónicos nuevos son únicos para cada registro.
+
+**Estructura del archivo CSV:**
+
+El archivo CSV puede tener diferentes columnas según las necesidades específicas del sistema. Sin embargo, en este ejemplo, se utilizaron las siguientes columnas:
+
+* `Usuario`: Nombre del usuario
+* `Correo electrónico actual`: Correo electrónico actual asociado al usuario
+* `Nuevo correo electrónico`: Nuevo correo electrónico a utilizar para recibir notificaciones
+* `Nombre` y `Apellido`: Información adicional sobre el usuario (opcional)
+
+**Formato de los datos:**
+
+Los valores en el archivo CSV deben estar separados por comas (`,"`) y cada fila debe ser delimitada por una línea nueva.
+
+**Ejemplo de uso:**
+
+Para utilizar estos datos de prueba, puedes importarlos en un sistema de gestión de usuarios o crear una base de datos con estas columnas y valores. Luego, puedes utilizar estos datos para simular la solicitud de actualizar la dirección de correo electrónico para recibir notificaciones en una nueva casilla.
+
+Recuerda que los correos electrónicos y otros datos personales deben tratarse con cuidado y respeto a la privacidad de los usuarios.

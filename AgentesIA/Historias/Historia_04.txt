@@ -1,0 +1,2 @@
+Como cliente quiero adherir mi tarjeta de crédito al débito automático
+para que el pago mensual se debite automáticamente de mi cuenta bancaria.

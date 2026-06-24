@@ -1,0 +1,23 @@
+**Análisis de Riesgos**
+
+A continuación, se presentan los riesgos funcionales, técnicos y casos borde identificados en el caso de financiar el saldo de una tarjeta de crédito en hasta 24 cuotas:
+
+**Riesgos Funcionales:**
+
+1. **Inadecuada gestión del crédito**: Si no se administra correctamente la deuda financiada, puede generar problemas para pagar las cuotas y cumplir con los términos del contrato.
+2. **Sobrecarga de tarjeta**: Si se supera el límite de tarjeta, puede generar costos adicionales por sobrepago o incluso bloquear la tarjeta.
+3. **Cambios en las condiciones contractuales**: Las condiciones del contrato pueden cambiar con respecto a los términos de pago, intereses y penalidades.
+
+**Riesgos Técnicos:**
+
+1. **Problemas con el sistema de pago**: Los problemas técnicos con el sistema de pago pueden generar retrasos o fallas en la transmisión de las cuotas.
+2. **Vulnerabilidades de seguridad**: Las vulnerabilidades de seguridad del sistema pueden permitir accesos no autorizados y manipulación de datos personales.
+
+**Caso Borde:**
+
+1. **Deuda insoluble**: Si el saldo de la tarjeta supera la capacidad de pago, es posible que la deuda se considere insoluble y se requiera un acuerdo con el acreedor.
+2. **Situaciones de emergencia**: En caso de emergencias como pérdida de empleo o enfermedad grave, puede ser difícil seguir pagando las cuotas y cumplir con los términos del contrato.
+
+**Conclusión**
+
+Es importante tener en cuenta estos riesgos funcionales, técnicos y casos borde al financiar el saldo de una tarjeta de crédito en hasta 24 cuotas. Es fundamental leer y comprender los términos del contrato y tener un plan de pago realista para evitar problemas financieros.

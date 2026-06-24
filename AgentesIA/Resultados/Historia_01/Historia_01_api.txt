@@ -1,0 +1,65 @@
+**Endpoint sugerido:** `/actualizar-correo-electronico`
+
+**Método HTTP:** `PUT`
+
+**Caso 1: Actualización exitosa**
+
+* **Caso:** La solicitud es exitosa y se actualiza la dirección de correo electrónico correctamente.
+* **Request (JSON):**
+```json
+{
+  "id": 123,
+  "correoElectronico": "nuevo_correo@example.com"
+}
+```
+* **Resultado esperado:**
+```json
+{
+  "mensaje": "Correo electrónico actualizado con éxito.",
+  "resultado": true
+}
+```
+
+**Caso 2: Error de formato (correos electrónicos inválidos)**
+
+* **Caso:** Se intenta actualizar la dirección de correo electrónico con un formato inválido.
+* **Request (JSON):**
+```json
+{
+  "id": 123,
+  "correoElectronico": "correoelectronico@."
+}
+```
+* **Resultado esperado:**
+```json
+{
+  "mensaje": "El correo electrónico proporcionado no es válido.",
+  "resultado": false,
+  "error": {
+    "codigo": 1001,
+    " mensaje": "Formato de correo electrónico inválido"
+  }
+}
+```
+
+**Caso 3: Error de autorización (usuario sin permisos)**
+
+* **Caso:** Se intenta actualizar la dirección de correo electrónico, pero el usuario no tiene los permisos necesarios.
+* **Request (JSON):**
+```json
+{
+  "id": 123,
+  "correoElectronico": "nuevo_correo@example.com"
+}
+```
+* **Resultado esperado:**
+```json
+{
+  "mensaje": "No tienes permiso para actualizar tu correo electrónico.",
+  "resultado": false,
+  "error": {
+    "codigo": 1002,
+    "mensaje": "Permiso de actualización no disponible"
+  }
+}
+```

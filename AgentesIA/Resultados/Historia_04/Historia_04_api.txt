@@ -1,0 +1,96 @@
+**Endpoint sugerido:** `/api/tarjetas/debito/adicion`
+
+**Método HTTP:** `POST`
+
+**Caso positivo 1: Adición exitosa de tarjeta de crédito al débito automático**
+
+*   Caso:
+    *   Solicitud: Una solicitud de adición de una tarjeta de crédito al débito automático debe ser enviada para que el sistema pueda activar esta función.
+    *   Request (JSON):
+        ```json
+{
+  "idTarjeta": "123456789",
+  "nombreEmergente": "Juan Pérez García",
+  "numeroTarjeta": "9876543210",
+  "fechaExpiracion": "12/2025",
+  "cuerpoSeguridad": "XYZ123"
+}
+```
+*   Resultado esperado:
+    *   El sistema debe responder con un código de estado 201 (Created) y un mensaje de éxito indicando que la tarjeta ha sido agregada al débito automático.
+
+**Caso positivo 2: Actualización exitosa del pago mensual**
+
+*   Caso:
+    *   Solicitud: La solicitud de actualizar el monto del pago mensual debe ser enviada para que el sistema pueda realizar este ajuste en la cuenta bancaria.
+    *   Request (JSON):
+        ```json
+{
+  "idTarjeta": "123456789",
+  "montoPagoMensual": 5000
+}
+```
+*   Resultado esperado:
+    *   El sistema debe responder con un código de estado 200 (OK) y un mensaje de éxito indicando que el pago mensual ha sido actualizado correctamente.
+
+**Caso positivo 3: Consulta exitosa del estado actual**
+
+*   Caso:
+    *   Solicitud: La solicitud de consultar el estado actual de la tarjeta de crédito en el débito automático debe ser enviada para obtener información sobre este proceso.
+    *   Request (JSON):
+        ```json
+{
+  "idTarjeta": "123456789"
+}
+```
+*   Resultado esperado:
+    *   El sistema debe responder con un código de estado 200 (OK) y un mensaje que incluya el estado actual del pago mensual para esta tarjeta.
+
+**Caso negativo 1: Falta de credenciales**
+
+*   Caso:
+    *   Solicitud: La solicitud fallida debido a la ausencia de credenciales necesarias.
+*   Request (JSON):
+    ```json
+{
+  "idTarjeta": "",
+  "nombreEmergente": "",
+  "numeroTarjeta": "",
+  "fechaExpiracion": ""
+}
+```
+*   Resultado esperado:
+    *   El sistema debe responder con un código de estado 400 (Bad Request) y un mensaje indicando que la solicitud no tiene suficientes datos.
+
+**Caso negativo 2: Tarjeta inválida**
+
+*   Caso:
+    *   Solicitud: La solicitud fallida debido a una tarjeta inválida.
+*   Request (JSON):
+    ```json
+{
+  "idTarjeta": "123456789",
+  "nombreEmergente": "",
+  "numeroTarjeta": "999999999",
+  "fechaExpiracion": ""
+}
+```
+*   Resultado esperado:
+    *   El sistema debe responder con un código de estado 400 (Bad Request) y un mensaje indicando que la tarjeta proporcionada es inválida.
+
+**Caso negativo 3: Error interno del servidor**
+
+*   Caso:
+    *   Solicitud: La solicitud fallida debido a un error interno en el sistema.
+*   Request (JSON):
+    ```json
+{
+  "idTarjeta": "123456789",
+  "nombreEmergente": "Juan Pérez García",
+  "numeroTarjeta": "9876543210",
+  "fechaExpiracion": "12/2025",
+  "cuerpoSeguridad": ""
+}
+```
+*   Resultado esperado:
+    *   El sistema debe responder con un código de estado 500 (Internal Server Error) y un mensaje indicando que ocurred un error interno del servidor.

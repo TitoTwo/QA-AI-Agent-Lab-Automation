@@ -1,0 +1,51 @@
+¡Claro! A continuación, te presento 5 casos de prueba negativos para la función de actualización de dirección de correo electrónico:
+
+**Caso 1: Actualizar campo obligatorio vacío**
+
+* Caso:
+	+ Acceso al menú de configuración
+	+ Seleccionar opción "Actualizar dirección de correo electrónico"
+	+ Ingresar un campo vacío en el campo de dirección de correo electrónico
+	+ Clikar en "Guardar cambios"
+*Resultado esperado:
+	+ Un mensaje de error aparecerá, indicando que el campo de dirección de correo electrónico es obligatorio
+
+**Caso 2: Actualizar dirección de correo electrónico con formato inválido**
+
+* Caso:
+	+ Acceso al menú de configuración
+	+ Seleccionar opción "Actualizar dirección de correo electrónico"
+	+ Ingresar una dirección de correo electrónico con caracteres no permitidos (por ejemplo, `$@#` )
+	+ Clikar en "Guardar cambios"
+*Resultado esperado:
+	+ Un mensaje de error aparecerá, indicando que la dirección de correo electrónico no es válida
+
+**Caso 3: Actualizar campo de dirección de correo electrónico con valor fuera del rango permitido**
+
+* Caso:
+	+ Acceso al menú de configuración
+	+ Seleccionar opción "Actualizar dirección de correo electrónico"
+	+ Ingresar una dirección de correo electrónico que no sea válida (por ejemplo, un dominio ficticio o una dirección que supere los límites de longitud permitidos)
+	+ Clikar en "Guardar cambios"
+*Resultado esperado:
+	+ Un mensaje de error aparecerá, indicando que la dirección de correo electrónico no es válida
+
+**Caso 4: Actualizar campo de dirección de correo electrónico con error de integración**
+
+* Caso:
+	+ Acceso al menú de configuración
+	+ Seleccionar opción "Actualizar dirección de correo electrónico"
+	+ Ingresar una dirección de correo electrónico correcta, pero que no se pueda enviar debido a un problema de conexión con el servidor (por ejemplo, la red está apagada)
+	+ Clikar en "Guardar cambios"
+*Resultado esperado:
+	+ Un mensaje de error aparecerá, indicando que hubo un problema al enviar la notificación
+
+**Caso 5: Actualizar campo de dirección de correo electrónico con restricción de negocio**
+
+* Caso:
+	+ Acceso al menú de configuración
+	+ Seleccionar opción "Actualizar dirección de correo electrónico"
+	+ Ingresar una dirección de correo electrónico que esté asociada con otra cuenta o usuario existente
+	+ Clikar en "Guardar cambios"
+*Resultado esperado:
+	+ Un mensaje de error aparecerá, indicando que la dirección de correo electrónico está asociada a otra cuenta o usuario

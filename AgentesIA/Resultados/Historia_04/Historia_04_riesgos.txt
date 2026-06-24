@@ -1,0 +1,33 @@
+**Análisis de Riesgos**
+
+A continuación, se presentan los riesgos funcionales, técnicos y casos borde asociados con la implementación del sistema de pago automático para tarjetas de crédito.
+
+**Riesgos Funcionales**
+
+1. **Falta de privacidad**: ¿Cómo garantizar que el proceso de pago sea seguro y que no se acceda a la información de cuenta bancaria?
+2. **Interrupciones en el servicio**: ¿Qué sucedería si hubiera una interrupción en el servicio de pago automático, como un corte de energía o un problema técnico?
+3. **Falta de notificación**: ¿Cómo se notificará al cliente en caso de que se produce algún problema con el pago?
+
+**Riesgos Técnicos**
+
+1. **Seguridad**: ¿Cómo proteger la información de cuenta bancaria y garantizar que no se pierda o se vea comprometida?
+2. **Integración con sistemas externos**: ¿Cómo integrar el sistema de pago automático con los sistemas del banco y otros proveedores de servicios?
+3. **Error en la transacción**: ¿Qué sucedería si hubiera un error en la transacción, como una mala lectura del código del tarjeta?
+
+**Caso Borde**
+
+1. **Tarjeta no activada**: ¿Qué sucedería si la tarjeta de crédito no estuviera activa o si no se había cargado el saldo inicial?
+2. **Saldo insuficiente**: ¿Qué sucedería si no tenía suficiente saldo en la cuenta bancaria para realizar el pago?
+3. **Bloqueo de transacción**: ¿Qué sucedería si la transacción fue bloqueada por alguna razón, como una flag del sistema o un problema con la tarjeta?
+
+**Soluciones**
+
+Para mitigar estos riesgos, se pueden implementar las siguientes soluciones:
+
+* Implementar medidas de seguridad avanzadas, como cifrado y autenticación biométrica.
+* Desarrollar un plan de contingencia para incidentes técnicos y problemas de pago.
+* Notificar al cliente en caso de cualquier problema con el pago o la transacción.
+* Verificar que la tarjeta esté activa y cargada antes de realizar la transacción.
+* Implementar una verificación del saldo antes de realizar el pago.
+
+Es importante tener en cuenta que la implementación de un sistema de pago automático requiere una cuidadosa evaluación de riesgos y la implementación de medidas de seguridad y control para mitigar los posibles problemas.

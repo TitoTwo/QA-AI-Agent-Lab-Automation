@@ -1,0 +1,2 @@
+Como cliente quiero financiar el saldo de mi tarjeta de crédito
+en hasta 24 cuotas para poder pagar mi deuda en forma financiada.

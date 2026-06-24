@@ -1,0 +1,6 @@
+ollama
+pytest
+requests
+httpx
+python-dotenv
+pydantic

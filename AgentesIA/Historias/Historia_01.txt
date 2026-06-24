@@ -1,0 +1,2 @@
+Como usuario quiero actualizar mi dirección de correo electrónico
+para recibir notificaciones en una nueva casilla.

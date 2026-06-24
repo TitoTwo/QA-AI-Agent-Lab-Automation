@@ -1,0 +1,19 @@
+Aquí te presento los criterios de aceptación generados a partir de la historia proporcionada:
+
+Criterio 1:
+La aplicación debe permitir que el usuario inicie sesión con su información de tarjeta de crédito.
+
+Criterio 2:
+Al iniciar sesión, el sistema debe validar la existencia y la integridad de la información de la tarjeta de crédito, incluyendo el número de la tarjeta, la fecha de vencimiento y el código de seguridad.
+
+Criterio 3:
+La aplicación debe ofrecer la opción de seleccionar un débito automático para cada pago mensual.
+
+Criterio 4:
+Si el usuario selecciona el débito automático, el sistema debe verificar que la cuenta bancaria asociada esté activa y tenga fondos suficientes para realizar el pago.
+
+Criterio 5:
+La aplicación debe permitir al usuario verificar en cualquier momento si se ha configurado correctamente el débito automático y si los pagos mensuales se están realizando automáticamente de su cuenta bancaria.
+
+Criterio 6:
+Si se produce un error en la transacción, como una falta de fondos o una falla del servidor, el sistema debe enviar un mensaje de error al usuario para informar sobre el problema y proporcionar instrucciones para resolverlo.

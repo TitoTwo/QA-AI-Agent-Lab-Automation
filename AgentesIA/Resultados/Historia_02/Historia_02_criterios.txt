@@ -1,0 +1,19 @@
+**Criterios de Aceptación**
+
+A continuación, te presento los criterios de aceptación generados utilizando únicamente la información presente en la historia:
+
+**Criterio 1: La aplicación debe poder autenticar al usuario sin requerir la tarjeta dañada.**
+La aplicación debe permitir que el usuario acceda a su cuenta sin problemas, incluso cuando la tarjeta actual esté dañada.
+
+**Criterio 2: La aplicación debe poder generar una nueva tarjeta de crédito con éxito.**
+Al solicitar la reposición de la tarjeta, la aplicación debe poder generar una nueva tarjeta y guardar los datos del usuario asociados a ella con éxito.
+
+**Criterio 3: La aplicación debe mostrar un mensaje de éxito o fallido después de solicitar la reposición de la tarjeta.**
+Si la solicitud de reposición es exitosa, la aplicación debe mostrar un mensaje de éxito que indique el estado de la operación. Si falla, debe mostrar un mensaje de error con una descripción detallada del problema.
+
+**Criterio 4: La aplicación debe almacenar los datos del usuario asociados a la nueva tarjeta.**
+La aplicación debe guardar los datos del usuario (como información de contactos y preferencias) asociados a la nueva tarjeta para su uso futuro.
+
+**Criterio 5: La aplicación no debería mostrar errores inesperados o mensajes no relacionados con la solicitud de reposición de la tarjeta.**
+
+Estos criterios se centran en las operaciones clave involucradas en el proceso de solicitar la reposición de la tarjeta, sin agregar funcionalidades adicionales ni pantallas. Están orientados a pruebas funcionales y cumplen con las reglas obligatorias establecidas.

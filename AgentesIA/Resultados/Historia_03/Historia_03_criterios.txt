@@ -1,0 +1,16 @@
+Basado en la historia proporcionada, los siguientes son los criterios de aceptación que se pueden generar sin inventar funcionalidades adicionales ni agregar pantallas, notificaciones, correos electrónicos o reportes:
+
+Criterio 1:
+El sistema permite al usuario seleccionar el monto total del saldo a financiar.
+
+Criterio 2:
+El sistema muestra un mensaje de confirmación con la cantidad de cuotas disponibles (hasta 24) para el pago financiado.
+
+Criterio 3:
+Cuando el usuario ingresa una cantidad menor o igual al monto total, se permite el pago financiado y se calcula automáticamente el valor de cada cuota.
+
+Criterio 4:
+El sistema muestra el historial de pagos financierados con la fecha de pago y el monto pagado por cada cuota.
+
+Criterio 5:
+Al completar las cuotas (hasta 24), el sistema actualiza el saldo total reflejando que se ha cumplido con los términos del pago financiado.

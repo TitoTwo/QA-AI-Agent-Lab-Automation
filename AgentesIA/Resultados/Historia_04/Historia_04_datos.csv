@@ -1,0 +1,60 @@
+¡Claro! A continuación, te proporcionaré un ejemplo de cómo generar datos de prueba en formato CSV para simular una tarjeta de crédito y su uso en un sistema de pago automático.
+
+**Datos de prueba**
+
+| Campo | Valor |
+| --- | --- |
+| ID_Tarjeta | 1234567890 |
+| Número_Tarjeta | 4532119876543210 |
+| Código_CVC | 123 |
+| Fecha_Vencimiento | 2025-12-31 |
+| Asociado | Juan Pérez |
+
+**Datos de prueba para un pago automático**
+
+| Campo | Valor |
+| --- | --- |
+| ID_Pago | 1 |
+| ID_Tarjeta | 1234567890 |
+| Monto_Pago | 100.00 |
+| Fecha_Pago | 2023-03-15 |
+| Estado_Pago | Pendiente |
+
+**Cómo generar los datos**
+
+Puedes utilizar una herramienta de generación de datos como `faker` en Python para generar estos datos. Aquí tienes un ejemplo:
+
+```python
+import pandas as pd
+from faker import Faker
+
+fake = Faker()
+
+# Generar datos de tarjeta
+data_tarjeta = {
+    'ID_Tarjeta': [1],
+    'Número_Tarjeta': [f"4532{fake.numerical()}{fake.finance_prefix()}"],
+    'Código_CVC': [fake.numerical(3)],
+    'Fecha_Vencimiento': [f"{2025}-{fake.date_part('month', 12)}-{fake.date_part('day', 31)}"],
+    'Asociado': [fake.name()]
+}
+
+# Generar datos de pago
+data_pago = {
+    'ID_Pago': [1],
+    'ID_Tarjeta': [1234567890],
+    'Monto_Pago': [100.00],
+    'Fecha_Pago': [f"2023-{fake.date_part('month', 3)}-{fake.date_part('day', 15)}"],
+    'Estado_Pago': ['Pendiente']
+}
+
+# Crear DataFrames
+df_tarjeta = pd.DataFrame(data_tarjeta)
+df_pago = pd.DataFrame(data_pago)
+
+# Exportar a CSV
+df_tarjeta.to_csv('tarjetas.csv', index=False)
+df_pago.to_csv('pagos.csv', index=False)
+```
+
+Estos datos pueden ser modificados según sea necesario para satisfacer tus necesidades específicas.
