@@ -1,4 +1,4 @@
-import "../styles/ProductoMenu.css";
+import "./ProductoMenu.css";
 
 function ProductoMenu({
     acciones,

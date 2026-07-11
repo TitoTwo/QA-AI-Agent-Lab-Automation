@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import bancoApi from "../Api/bancoApi";
-import { formatoMoneda } from "../Utils/formatoMoneda";
-import "../styles/Movimientos.css";
+import bancoApi from "../../api/bancoApi";
+import { formatoMoneda } from "../../utils/formatoMoneda";
+import "./Movimientos.css";
 import { ArrowLeft } from "lucide-react";
-import Header from "../components/Header";
+import Header from "../../components/Header/Header";
 
 function Movimientos({ producto, volver }) {
 

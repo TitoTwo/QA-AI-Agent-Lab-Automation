@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import bancoApi from "../Api/bancoApi";
-import Movimientos from "./Movimientos";
-import "../styles/Home.css";
-import { formatoMoneda } from "../Utils/formatoMoneda";
-import Header from "../components/Header";
-import ProductoMenu from "../components/ProductoMenu";
+import bancoApi from "../../api/bancoApi";
+import Movimientos from "../Movimientos/Movimientos";
+import "./Home.css";
+import { formatoMoneda } from "../../utils/formatoMoneda";
+import Header from "../../components/Header/Header";
+import ProductoMenu from "../../components/ProductoMenu/ProductoMenu";
 
 function Home({ cliente, salir }) {
 

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import bancoApi from "../Api/bancoApi";
-import "../styles/Login.css";
-import Header from "../components/Header";
+import bancoApi from "../../api/bancoApi";
+import "./Login.css";
+import Header from "../../components/Header/Header";
 
 function Login({ setCliente }) {
 
