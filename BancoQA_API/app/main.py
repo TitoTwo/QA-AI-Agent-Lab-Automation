@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 from app.routers import clientes_router
 from app.routers import cuentas_router
@@ -12,6 +13,18 @@ app = FastAPI(
     title="BancoQA API",
     description="API bancaria ficticia para automatización QA",
     version="1.0"
+)
+
+
+# Configuración CORS para permitir comunicación con React
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 

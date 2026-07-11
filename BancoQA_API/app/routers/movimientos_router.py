@@ -1,63 +1,34 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter
 
-from app.mock_data.movimientos_data import movimientos
-
-
-router = APIRouter(
-    prefix="/movimientos",
-    tags=["Movimientos"]
+from app.services.movimientos_service import (
+    obtener_todos_movimientos,
+    obtener_movimientos_cuenta,
+    obtener_movimientos_tarjeta
 )
 
 
-@router.get("/")
+
+router = APIRouter()
+
+
+
+@router.get("/movimientos")
 def obtener_movimientos():
 
-    return movimientos
+    return obtener_todos_movimientos()
 
 
 
-@router.get("/cuenta/{cuenta_id}")
+
+@router.get("/movimientos/cuenta/{cuenta_id}")
 def movimientos_cuenta(cuenta_id:int):
 
-    resultado = []
-
-    for movimiento in movimientos:
-
-        if movimiento["cuenta_id"] == cuenta_id:
-
-            resultado.append(movimiento)
-
-
-    if not resultado:
-
-        raise HTTPException(
-            status_code=404,
-            detail="Cuenta sin movimientos"
-        )
-
-
-    return resultado
+    return obtener_movimientos_cuenta(cuenta_id)
 
 
 
-@router.get("/tarjeta/{tarjeta_id}")
+
+@router.get("/movimientos/tarjeta/{tarjeta_id}")
 def movimientos_tarjeta(tarjeta_id:int):
 
-    resultado = []
-
-    for movimiento in movimientos:
-
-        if movimiento["tarjeta_id"] == tarjeta_id:
-
-            resultado.append(movimiento)
-
-
-    if not resultado:
-
-        raise HTTPException(
-            status_code=404,
-            detail="Tarjeta sin movimientos"
-        )
-
-
-    return resultado
+    return obtener_movimientos_tarjeta(tarjeta_id)

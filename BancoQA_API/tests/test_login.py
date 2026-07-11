@@ -9,10 +9,9 @@ client = TestClient(app)
 
 def test_login_exitoso():
 
-
     response = client.post(
         "/auth/login",
-        params={
+        json={
             "usuario":"juan.perez",
             "password":"123456"
         }
@@ -21,25 +20,19 @@ def test_login_exitoso():
 
     assert response.status_code == 200
 
-
     body = response.json()
 
-
     assert body["mensaje"] == "Login exitoso"
-
     assert body["cliente_id"] == 1
-
-    assert body["token"] == "TOKEN_DEMO_123"
-
+    assert body["nombre"] == "Juan Perez"
 
 
 
 def test_login_usuario_incorrecto():
 
-
     response = client.post(
         "/auth/login",
-        params={
+        json={
             "usuario":"juan.perez",
             "password":"111111"
         }
@@ -48,14 +41,15 @@ def test_login_usuario_incorrecto():
 
     assert response.status_code == 401
 
+    assert response.json()["detail"] == "Usuario o contraseña incorrectos"
+
 
 
 def test_usuario_bloqueado():
 
-
     response = client.post(
         "/auth/login",
-        params={
+        json={
             "usuario":"usuario.bloqueado",
             "password":"999999"
         }
@@ -63,3 +57,5 @@ def test_usuario_bloqueado():
 
 
     assert response.status_code == 403
+
+    assert response.json()["detail"] == "Usuario bloqueado"

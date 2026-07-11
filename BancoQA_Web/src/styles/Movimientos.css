@@ -1,0 +1,189 @@
+/* =====================================
+   TITULO
+===================================== */
+
+.movimientos-top{
+    margin-bottom:25px;
+}
+
+.producto-nombre{
+    margin-top:8px;
+    font-size:16px;
+    color:#003b7a;
+}
+
+/* =====================================
+   BOTON VOLVER
+===================================== */
+
+.btn-volver{
+    border:none;
+    background:none;
+    color:#003b7a;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:bold;
+    padding:0;
+    margin-bottom:20px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.btn-volver:hover{
+    text-decoration:underline;
+}
+
+.flecha-volver{
+    width:20px;
+    height:20px;
+    stroke-width:3;
+    flex-shrink:0;
+}
+
+/* =====================================
+   TABLA MOVIMIENTOS
+===================================== */
+
+.movimientos-table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+    margin-top:25px;
+}
+
+.movimientos-table thead{
+    background:#f7f7f7;
+}
+
+.movimientos-table th{
+    padding:18px;
+    text-align:left;
+    color:#555;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.movimientos-table td{
+    padding:18px;
+    border-bottom:1px solid #ececec;
+    font-size:14px;
+}
+
+/* Texto normal */
+
+.movimientos-table td:nth-child(1),
+.movimientos-table td:nth-child(2),
+.movimientos-table td:nth-child(4){
+    color:#001b44;
+}
+
+/* Columna Importe */
+
+.movimientos-table th:nth-child(3),
+.movimientos-table td:nth-child(3){
+    width:180px;
+    text-align:right;
+}
+
+/* Columna Saldo */
+
+.movimientos-table th:nth-child(4),
+.movimientos-table td:nth-child(4){
+    width:180px;
+    text-align:right;
+}
+
+.movimientos-table tbody tr:hover{
+    background:#fafafa;
+}
+
+/* =====================================
+   DETALLE
+===================================== */
+
+.movimiento-comercio{
+    margin-top:4px;
+    color:#003b7a;
+    font-size:13px;
+    font-style:italic;
+}
+
+/* =====================================
+   IMPORTES
+===================================== */
+
+.importe-positivo{
+    color:#14853b !important;
+    font-weight:400;
+}
+
+.importe-negativo{
+    color:#d32f2f !important;
+    font-weight:400;
+}
+
+/* =====================================
+   RESUMEN TARJETAS
+===================================== */
+
+.tarjeta-resumen{
+    display:flex;
+    justify-content:flex-start;
+    gap:80px;
+    margin:25px 0 35px;
+    padding-left:2px;
+}
+
+.tarjeta-resumen-item{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.tarjeta-resumen-monto{
+    font-size:26px;
+    font-weight:400;
+    color:#003b7a;
+}
+
+.tarjeta-resumen-texto{
+    margin-top:6px;
+    font-size:14px;
+    color:#003b7a;
+}
+
+/* =====================================
+   CUOTAS
+===================================== */
+
+.cuota{
+    font-weight:500;
+    color:#555;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media(max-width:768px){
+
+    .tarjeta-resumen{
+        flex-direction:column;
+        gap:20px;
+        align-items:flex-start;
+    }
+
+    .movimientos-table{
+        font-size:13px;
+    }
+
+    .movimientos-table th,
+    .movimientos-table td{
+        padding:12px;
+    }
+
+}

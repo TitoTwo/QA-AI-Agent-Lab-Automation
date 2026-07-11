@@ -1,0 +1,192 @@
+/* ================================
+   CONTENEDOR GENERAL
+================================ */
+
+.home-container{
+    background:#f3f4f7;
+    min-height:100vh;
+    padding:30px;
+    font-family:Arial,sans-serif;
+}
+
+
+/* ================================
+   HEADER PRODUCTOS
+================================ */
+
+.productos-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.productos-header h2{
+    margin:0;
+    font-size:34px;
+    color:#001b44;
+}
+
+.ocultar-saldos{
+
+    border:none;
+
+    background:transparent;
+
+    color:#003b7a;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+.ocultar-saldos:hover{
+    text-decoration:underline;
+}
+
+.ocultar-saldos svg{
+
+    width:18px;
+
+    height:18px;
+
+    flex-shrink:0;
+
+}
+
+/* ================================
+   TITULOS
+================================ */
+
+.section-title{
+    margin:35px 0 15px 0;
+    font-size:30px;
+    color:#001b44;
+}
+
+/* ================================
+   LISTA PRODUCTOS
+================================ */
+
+.productos-lista{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+/* ================================
+   FILA PRODUCTO
+================================ */
+
+.producto-row{
+    background:#fff;
+    border-radius:16px;
+    padding:22px 24px;
+    display:flex;
+    align-items:center;
+    cursor:pointer;
+    transition:.25s;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+.producto-row:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 18px rgba(0,0,0,.12);
+}
+
+/* ================================
+   INFO IZQUIERDA
+================================ */
+
+.producto-info{
+    flex:1;
+}
+
+.producto-title{
+    font-size:18px;
+    font-weight:bold;
+    color:#003b7a;
+    margin-bottom:8px;
+}
+
+.producto-numero{
+    font-size:14px;
+    color:#001b44;
+}
+
+/* ================================
+   SALDOS CUENTAS
+================================ */
+
+.producto-saldos{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:14px;
+}
+
+.producto-saldo{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    color:#001b44;
+}
+
+.producto-saldo span{
+    margin-top:4px;
+    font-size:15px;
+    font-weight:400;
+    color:#001b44;
+}
+
+/* ================================
+   TARJETAS
+================================ */
+
+.tarjeta-saldos{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:14px;
+}
+
+.tarjeta-saldo{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+}
+
+.tarjeta-monto{
+    font-size:16px;
+    font-weight:400;
+    color:#001b44;
+}
+
+.tarjeta-texto{
+    margin-top:4px;
+    font-size:15px;
+    font-weight:400;
+    color:#001b44;
+}
+
+/* ================================
+   MENU
+================================ */
+
+.producto-menu{
+    position: relative;
+    width:30px;
+    text-align:center;
+    font-size:28px;
+    color:#003b7a;
+    margin-left:20px;
+}

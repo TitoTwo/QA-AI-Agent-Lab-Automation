@@ -1,0 +1,51 @@
+.producto-menu-popup{
+
+    position:absolute;
+    top:38px;
+    right:0;
+
+    background:white;
+
+    border-radius:12px;
+
+    box-shadow:0 4px 16px rgba(0,0,0,.18);
+
+    min-width:220px;
+
+    overflow:hidden;
+
+    z-index:100;
+
+}
+
+.producto-menu-item{
+
+    width:100%;
+
+    border:none;
+
+    background:white;
+
+    padding:14px 18px;
+
+    text-align:left;
+
+    cursor:pointer;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#001b44;
+
+    transition:background .2s ease, color .2s ease;
+
+}
+
+.producto-menu-item:hover{
+
+    background:#f4f7fb;
+
+    color:#003b7a;
+
+}

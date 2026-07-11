@@ -1,0 +1,223 @@
+/* =====================================
+   PAGINA
+===================================== */
+
+.login-page{
+    min-height:100vh;
+    background:#f3f4f7;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:35px 20px;
+    font-family:Arial,sans-serif;
+}
+
+/* =====================================
+   TARJETA LOGIN
+===================================== */
+
+.login-card{
+    width:100%;
+    max-width:650px;
+    background:#fff;
+    border-radius:20px;
+    padding:50px;
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
+}
+
+/* =====================================
+   TITULO
+===================================== */
+
+.login-card h1{
+    margin:0 0 40px 0;
+    color:#001b44;
+    font-size:50px;
+    line-height:58px;
+}
+
+/* =====================================
+   CAMPOS
+===================================== */
+
+.campo{
+    display:flex;
+    flex-direction:column;
+    margin-bottom:22px;
+}
+
+.campo label{
+    margin-bottom:8px;
+    font-size:14px;
+    color:#6b7280;
+}
+
+.campo input,
+.campo select{
+    height:56px;
+    border:1px solid #001391;
+    border-radius:10px;
+    padding:0 18px;
+    font-size:17px;
+    outline:none;
+    background:white;
+    transition:.2s;
+    box-sizing:border-box;
+}
+
+.campo input:focus,
+.campo select:focus{
+    border:2px solid #001391;
+    box-shadow:0 0 0 4px rgba(0,19,145,.08);
+}
+
+/* =====================================
+   SELECT
+===================================== */
+
+.campo select{
+
+    appearance:none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+
+    cursor:pointer;
+
+    padding-right:60px;
+
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 16 16'%3E%3Cpath d='M3 6l5 5 5-5' stroke='%23001391' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+
+    background-repeat:no-repeat;
+
+    background-position:right 18px center;
+
+    background-size:18px;
+
+}
+
+/* =====================================
+   INPUT CON OJO
+===================================== */
+
+.input-icono{
+    position:relative;
+}
+
+.input-icono input{
+    width:100%;
+    box-sizing:border-box;
+    padding-right:60px;
+}
+
+.icono-ojo{
+    position:absolute;
+    right:15px;
+    top:50%;
+    transform:translateY(-50%);
+    border:none;
+    background:none;
+    cursor:pointer;
+    color:#001391;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:0;
+}
+
+.icono-ojo svg{
+    width:20px;
+    height:20px;
+    stroke-width:2;
+}
+
+/* =====================================
+   RECORDAR
+===================================== */
+
+.recordar{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    background:#fafafa;
+    border-radius:12px;
+    padding:18px;
+    margin:30px 0;
+}
+
+.recordar input{
+    width:22px;
+    height:22px;
+    cursor:pointer;
+}
+
+.recordar label{
+    cursor:pointer;
+    color:#001b44;
+    font-size:15px;
+}
+
+/* =====================================
+   BOTON
+===================================== */
+
+.btn-login{
+    width:100%;
+    height:58px;
+    border:none;
+    border-radius:12px;
+    font-size:18px;
+    font-weight:600;
+    transition:.2s;
+}
+
+.btn-login:disabled{
+    background:#d7dde7;
+    color:#9aa3b2;
+    cursor:not-allowed;
+}
+
+.btn-login:not(:disabled){
+    background:#001391;
+    color:white;
+    cursor:pointer;
+}
+
+.btn-login:not(:disabled):hover{
+    background:#00106d;
+}
+
+/* =====================================
+   MANCHETA ERROR
+===================================== */
+
+.login-error{
+    margin:18px 0;
+    padding:14px 18px;
+    background:#fdecec;
+    border:1px solid #f3b8b8;
+    border-radius:10px;
+    color:#b3261e;
+    font-size:14px;
+    font-weight:500;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media(max-width:768px){
+
+    .login-card{
+        padding:28px;
+    }
+
+    .login-card h1{
+        font-size:34px;
+        line-height:42px;
+    }
+
+    .logo{
+        font-size:34px;
+    }
+
+}
