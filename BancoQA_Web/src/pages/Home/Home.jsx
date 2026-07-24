@@ -2,15 +2,21 @@ import { useEffect, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import bancoApi from "../../api/bancoApi";
 import Movimientos from "../Movimientos/Movimientos";
+import useFlujo from "../../hooks/useFlujo";
+import FlowManager from "../../flows/FlowManager";
 import "./Home.css";
 import { formatoMoneda } from "../../utils/formatoMoneda";
 import Header from "../../components/Header/Header";
 import ProductoMenu from "../../components/ProductoMenu/ProductoMenu";
+import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 function Home({ cliente, salir }) {
 
+    useScrollToTop();
+
     const [datosHome, setDatosHome] = useState(null);
     const [productoSeleccionado, setProductoSeleccionado] = useState(null);
+    const {flujoActivo, abrirFlujo, cerrarFlujo} = useFlujo();
     const [mostrarSaldos, setMostrarSaldos] = useState(true);
 
     const [menuAbierto, setMenuAbierto] = useState(null);
@@ -43,13 +49,50 @@ function Home({ cliente, salir }) {
 
     }
 
+    if (flujoActivo) {
+
+        return (
+
+            <FlowManager
+
+                flujo={flujoActivo}
+
+                producto={productoSeleccionado}
+
+                volver={() => {
+
+                    cerrarFlujo();
+
+                    setProductoSeleccionado(null);
+
+                }}
+
+            />
+
+        );
+
+    }
+
     if (productoSeleccionado) {
 
         return (
+
             <Movimientos
+
                 producto={productoSeleccionado}
+
                 volver={() => setProductoSeleccionado(null)}
+
+                onAbrirFlujo={(flujo, producto) => {
+
+                    setProductoSeleccionado(producto);
+
+                    abrirFlujo(flujo);
+
+                }}
+
             />
+
         );
 
     }
@@ -347,13 +390,9 @@ function Home({ cliente, salir }) {
 
                                             case "FINANCIAR_SALDO":
 
-                                                console.log(
-                                                    "Ir a financiar saldo",
-                                                    tarjeta.id
-                                                );
+                                                setProductoSeleccionado(tarjeta);
 
-                                                // Próximo paso:
-                                                // setPantalla("FINANCIAR_SALDO")
+                                                abrirFlujo("FINANCIAR");
 
                                                 break;
 

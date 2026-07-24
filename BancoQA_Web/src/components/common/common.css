@@ -1,0 +1,366 @@
+/* =====================================
+   BOTÓN VOLVER
+===================================== */
+
+.btn-volver-common{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    border:none;
+
+    background:none;
+
+    color:#003b7a;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    padding:0;
+
+}
+
+.btn-volver-common:hover{
+
+    text-decoration:underline;
+
+}
+
+.flecha-volver-common{
+
+    width:20px;
+
+    height:20px;
+
+    flex-shrink:0;
+
+}
+
+/* =====================================
+   BOTÓN PRINCIPAL
+===================================== */
+
+.btn-continuar-common{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:180px;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#0057b8;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.btn-continuar-common:hover:not(:disabled){
+
+    background:#00479a;
+
+}
+
+.btn-continuar-common:disabled{
+
+    background:#c8d0da;
+
+    cursor:not-allowed;
+
+}
+
+/* =====================================
+   STEP INDICATOR
+===================================== */
+
+.paso-indicador-common{
+
+    font-size:15px;
+
+    font-weight:700;
+
+    color:#4f4f4f;
+
+}
+
+/* =====================================
+   CARD
+===================================== */
+
+.card-common{
+
+    background:white;
+
+    border:1px solid #d9d9d9;
+
+    border-radius:10px;
+
+}
+
+/* =====================================
+   SELECT
+===================================== */
+
+.select-common-container{
+
+    position:relative;
+
+}
+
+.select-common{
+
+    width:100%;
+
+    height:58px;
+
+    padding:0 45px 0 16px;
+
+    border:1px solid #d8d8d8;
+
+    border-radius:4px;
+
+    background:white;
+
+    color:#002b5c;
+
+    font-size:18px;
+
+    font-weight:500;
+
+    appearance:none;
+
+    -webkit-appearance:none;
+
+    -moz-appearance:none;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.select-common:hover{
+
+    border-color:#0057b8;
+
+}
+
+.select-common:focus{
+
+    outline:none;
+
+    border-color:#0057b8;
+
+    box-shadow:0 0 0 2px rgba(0,87,184,.15);
+
+}
+
+.select-common-arrow{
+
+    position:absolute;
+
+    right:16px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:#0057b8;
+
+    font-size:14px;
+
+    pointer-events:none;
+
+}
+
+.select-common option[disabled]{
+
+    color:#8b8b8b;
+
+}
+
+/* =====================================
+   CURRENCY INPUT
+===================================== */
+
+.currency-input-container{
+
+    width:330px;
+
+}
+
+.currency-input-box{
+
+    display:flex;
+
+    align-items:center;
+
+    background:white;
+
+    border:1px solid #cfcfcf;
+
+    border-radius:8px;
+
+    overflow:hidden;
+
+    transition:.2s;
+
+}
+
+.currency-input-box:focus-within{
+
+    border:2px solid #0057b8;
+
+}
+
+.currency-symbol{
+
+    padding:0 16px;
+
+    color:#003b7a;
+
+    font-size:18px;
+
+    font-weight:600;
+
+}
+
+.currency-input{
+
+    flex:1;
+
+    border:none;
+
+    outline:none;
+
+    padding:16px 14px;
+
+    font-size:17px;
+
+    color:#003b7a;
+
+    background:white;
+
+    appearance:textfield;
+
+    -moz-appearance:textfield;
+
+}
+
+.currency-input::-webkit-outer-spin-button,
+.currency-input::-webkit-inner-spin-button{
+
+    -webkit-appearance:none;
+
+    margin:0;
+
+}
+
+.currency-messages{
+
+    width:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    padding-left:calc(16px + 18px + 16px);
+
+    box-sizing:border-box;
+
+}
+
+.currency-helper{
+
+    width:100%;
+
+    margin-top:14px;
+
+    color:#666;
+
+    font-size:14px;
+
+    line-height:22px;
+
+}
+
+.currency-error{
+
+    width:100%;
+
+    margin-top:10px;
+
+    color:#d32f2f;
+
+    font-size:14px;
+
+    font-weight:500;
+
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media(max-width:768px){
+
+    .currency-input-container{
+
+        width:100%;
+
+    }
+
+}
+
+/* =====================================
+   DOWNLOAD RECEIPT BUTTON
+===================================== */
+
+.btn-download-common{
+
+    margin-top:20px;
+
+    border:none;
+
+    background:none;
+
+    color:#0057b8;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.btn-download-common:hover{
+
+    text-decoration:underline;
+
+}

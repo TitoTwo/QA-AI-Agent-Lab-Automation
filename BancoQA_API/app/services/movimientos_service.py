@@ -240,3 +240,38 @@ def ordenar_movimientos(lista):
         reverse=True
 
     )
+
+# =====================================================
+# CALCULAR VALOR CUOTA
+# =====================================================
+
+def calcular_valor_cuota(movimiento):
+
+    cuotas = movimiento.get("cuotas")
+
+    if not cuotas:
+        return abs(movimiento["monto"])
+
+    total = cuotas.get("total", 1)
+
+    if total <= 1:
+        return abs(movimiento["monto"])
+
+    return round(abs(movimiento["monto"]) / total, 2)
+
+
+# =====================================================
+# CALCULAR MONTO VISIBLE
+# =====================================================
+
+def calcular_monto_visible(movimiento):
+
+    cuotas = movimiento.get("cuotas")
+
+    if not cuotas:
+        return abs(movimiento["monto"])
+
+    if cuotas["total"] <= 1:
+        return abs(movimiento["monto"])
+
+    return calcular_valor_cuota(movimiento)

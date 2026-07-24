@@ -7,6 +7,7 @@ from app.routers import tarjetas_router
 from app.routers import movimientos_router
 from app.routers import auth_router
 from app.routers import home_router
+from app.routers import financiacion_router
 
 
 app = FastAPI(
@@ -34,3 +35,4 @@ app.include_router(tarjetas_router.router)
 app.include_router(movimientos_router.router)
 app.include_router(auth_router.router)
 app.include_router(home_router.router)
+app.include_router(financiacion_router.router)

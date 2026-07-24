@@ -199,7 +199,7 @@ movimientos = [
 "movimiento":"DEBITO",
 "cuotas":{
     "actual":1,
-    "total":3
+    "total":1
 }
 },
 
@@ -223,8 +223,42 @@ movimientos = [
 }
 },
 
+{
+"id":103,
+"cliente_id":1,
+"tarjeta_id":101,
+"tipo":"TARJETA_CREDITO",
+"categoria":"COMPRA",
+"fecha":"2026-01-13",
+"descripcion":"Compra Amazon",
+"comercio":"Amazon",
+"moneda":"USD",
+"monto":-4120,
+"movimiento":"DEBITO",
+"cuotas":{
+    "actual":1,
+    "total":1
+}
+},
 
 
+{
+"id":104,
+"cliente_id":1,
+"tarjeta_id":101,
+"tipo":"TARJETA_CREDITO",
+"categoria":"COMPRA",
+"fecha":"2026-01-15",
+"descripcion":"Compra tecnologia",
+"comercio":"Mercado Libre",
+"moneda":"ARS",
+"monto":-450000,
+"movimiento":"DEBITO",
+"cuotas":{
+    "actual":3,
+    "total":12
+}
+},
 
 # =====================================================
 # MASTERCARD BLACK 102 - TARJETA CREDITO
@@ -354,6 +388,256 @@ movimientos = [
     "actual":1,
     "total":1
 }
-}
+},
 
+# Movimientos adicionales para perfiles de prueba
+{
+
+"id":1000,
+"cliente_id":5,
+"cuenta_id":8001,
+"tipo":"CUENTA",
+"categoria":"DEPOSITO",
+"fecha":"2026-02-01",
+"descripcion":"Deposito inicial",
+"comercio":None,
+"moneda":"ARS",
+"monto":20000,
+"movimiento":"CREDITO"
+},
+{
+"id":1001,
+"cliente_id":5,
+"tarjeta_id":401,
+"tipo":"TARJETA_DEBITO",
+"categoria":"COMPRA",
+"fecha":"2026-02-05",
+"descripcion":"Compra supermercado",
+"comercio":"Dia",
+"moneda":"ARS",
+"monto":-1500,
+"movimiento":"DEBITO"
+},
+
+{
+"id":1002,
+"cliente_id":6,
+"cuenta_id":8002,
+"tipo":"CUENTA",
+"categoria":"TRANSFERENCIA",
+"fecha":"2026-03-01",
+"descripcion":"Sueldo recibido",
+"comercio":None,
+"moneda":"ARS",
+"monto":150000,
+"movimiento":"CREDITO"
+},
+{
+"id":1003,
+"cliente_id":6,
+"tarjeta_id":402,
+"tipo":"TARJETA_CREDITO",
+"categoria":"COMPRA",
+"fecha":"2026-03-05",
+"descripcion":"Compra online",
+"comercio":"Mercado Libre",
+"moneda":"ARS",
+"monto":-4500,
+"movimiento":"DEBITO",
+"cuotas":{"actual":1,"total":1}
+},
+
+{
+"id":1004,
+"cliente_id":7,
+"cuenta_id":8003,
+"tipo":"CUENTA",
+"categoria":"TRANSFERENCIA",
+"fecha":"2026-04-01",
+"descripcion":"Transferencia recibida",
+"comercio":None,
+"moneda":"ARS",
+"monto":500000,
+"movimiento":"CREDITO"
+},
+{
+"id":1005,
+"cliente_id":7,
+"tarjeta_id":403,
+"tipo":"TARJETA_CREDITO",
+"categoria":"COMPRA",
+"fecha":"2026-04-10",
+"descripcion":"Compra tecnologia",
+"comercio":"CompuStore",
+"moneda":"ARS",
+"monto":-80000,
+"movimiento":"DEBITO",
+"cuotas":{"actual":1,"total":6}
+},
+
+{
+"id":1006,
+"cliente_id":8,
+"cuenta_id":8005,
+"tipo":"CUENTA",
+"categoria":"TRANSFERENCIA",
+"fecha":"2026-05-01",
+"descripcion":"Transferencia internacional",
+"comercio":None,
+"moneda":"USD",
+"monto":10000,
+"movimiento":"CREDITO"
+},
+{
+"id":1007,
+"cliente_id":8,
+"cuenta_id":8006,
+"tipo":"CUENTA",
+"categoria":"COMPRA",
+"fecha":"2026-05-03",
+"descripcion":"Compra en el exterior",
+"comercio":"Airbnb",
+"moneda":"USD",
+"monto":-250,
+"movimiento":"DEBITO"
+},
+
+{
+"id":1008,
+"cliente_id":9,
+"cuenta_id":8007,
+"tipo":"CUENTA",
+"categoria":"DEPOSITO",
+"fecha":"2026-01-10",
+"descripcion":"Depósito comercial",
+"comercio":None,
+"moneda":"ARS",
+"monto":900000,
+"movimiento":"CREDITO"
+},
+{
+"id":1009,
+"cliente_id":9,
+"tarjeta_id":406,
+"tipo":"TARJETA_CREDITO",
+"categoria":"COMPRA",
+"fecha":"2026-01-15",
+"descripcion":"Compra internacional",
+"comercio":"Louis Vuitton",
+"moneda":"EUR",
+"monto":-2500,
+"movimiento":"DEBITO",
+"cuotas":{"actual":1,"total":3}
+},
+
+{
+"id":1010,
+"cliente_id":10,
+"cuenta_id":8009,
+"tipo":"CUENTA",
+"categoria":"DEPOSITO",
+"fecha":"2026-02-01",
+"descripcion":"Pago cliente X",
+"comercio":None,
+"moneda":"ARS",
+"monto":2000000,
+"movimiento":"CREDITO"
+},
+{
+"id":1011,
+"cliente_id":10,
+"cuenta_id":8009,
+"tipo":"CUENTA",
+"categoria":"PAGO",
+"fecha":"2026-02-05",
+"descripcion":"Pago a proveedor",
+"comercio":"Proveedor SA",
+"moneda":"ARS",
+"monto":-150000,
+"movimiento":"DEBITO"
+},
+
+{
+"id":1012,
+"cliente_id":11,
+"cuenta_id":8101,
+"tipo":"CUENTA",
+"categoria":"INFO",
+"fecha":"2026-01-01",
+"descripcion":"Cuenta creada - sin movimientos",
+"comercio":None,
+"moneda":"ARS",
+"monto":0,
+"movimiento":"CREDITO"
+},
+
+{
+"id":1013,
+"cliente_id":13,
+"cuenta_id":8301,
+"tipo":"CUENTA",
+"categoria":"DEPOSITO",
+"fecha":"2026-03-01",
+"descripcion":"Depósito inicial",
+"comercio":None,
+"moneda":"ARS",
+"monto":50000,
+"movimiento":"CREDITO"
+},
+
+{
+"id":1014,
+"cliente_id":14,
+"cuenta_id":8401,
+"tipo":"CUENTA",
+"categoria":"TRANSFERENCIA",
+"fecha":"2026-04-01",
+"descripcion":"Transferencia recibida",
+"comercio":None,
+"moneda":"ARS",
+"monto":200000,
+"movimiento":"CREDITO"
+},
+
+{
+"id":1015,
+"cliente_id":14,
+"cuenta_id":8402,
+"tipo":"CUENTA",
+"categoria":"TRANSFERENCIA",
+"fecha":"2026-04-02",
+"descripcion":"Transferencia USD",
+"comercio":None,
+"moneda":"USD",
+"monto":5000,
+"movimiento":"CREDITO"
+},
+
+# =====================================================
+# BLOQUE: CLIENTE 12 - MUCHOS MOVIMIENTOS (200+)
+# =====================================================
 ]
+
+# Generar 205 movimientos adicionales para el cliente_id 12 (cuenta 8201)
+for _i in range(1100, 1305):
+    idx = _i - 1100
+    mes = (idx // 28) % 12 + 1
+    dia = (idx % 28) + 1
+    fecha = f"2025-{mes:02d}-{dia:02d}"
+    monto = -((idx % 5) + 1) * 1000 if _i % 2 == 0 else ((idx % 4) + 1) * 1500
+    movimiento_tipo = "DEBITO" if monto < 0 else "CREDITO"
+    categoria = "PAGO" if _i % 3 == 0 else ("DEPOSITO" if _i % 5 == 0 else "TRANSFERENCIA")
+    movimientos.append({
+        "id": _i,
+        "cliente_id": 12,
+        "cuenta_id": 8201,
+        "tipo": "CUENTA",
+        "categoria": categoria,
+        "fecha": fecha,
+        "descripcion": f"Movimiento masivo { _i }",
+        "comercio": None,
+        "moneda": "ARS",
+        "monto": monto,
+        "movimiento": movimiento_tipo
+    })
+

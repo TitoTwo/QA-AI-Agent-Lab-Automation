@@ -1,0 +1,61 @@
+.opciones-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+    margin-top:30px;
+
+}
+
+.opcion-card{
+
+    padding:22px;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.opcion-card:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 4px 12px rgba(0,0,0,.12);
+
+}
+
+.opcion-titulo{
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:#003b7a;
+
+    margin-bottom:10px;
+
+}
+
+.opcion-descripcion{
+
+    font-size:14px;
+
+    color:#666;
+
+    line-height:22px;
+
+}
+
+@media(max-width:768px){
+
+    .opciones-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}

@@ -1,24 +1,17 @@
 import "./Header.css";
 
 function Header({
-    mostrarBanner = false,
+    mostrarBanner = true,
     mostrarSalir = false,
-    salir
+    salir,
+    titulo,
+    mostrarCerrar = false,
+    cerrar
 }) {
 
     return (
 
         <>
-
-            {mostrarBanner && (
-
-                <div className="header-banner">
-
-                    {/* Aquí luego irá la imagen/banner */}
-
-                </div>
-
-            )}
 
             <div className="header-app">
 
@@ -28,18 +21,45 @@ function Header({
 
                 </div>
 
-                {mostrarSalir && (
+                <div className="header-right">
 
-                    <button
-                        className="header-salir"
-                        onClick={salir}
-                    >
+                    {titulo && (
 
-                        Salir
+                        <span className="header-title">
 
-                    </button>
+                            {titulo}
 
-                )}
+                        </span>
+
+                    )}
+
+                    {mostrarSalir && (
+
+                        <button
+                            className="header-salir"
+                            onClick={salir}
+                        >
+
+                            Salir
+
+                        </button>
+
+                    )}
+
+                    {mostrarCerrar && (
+
+                        <button
+                            className="btn-cerrar-header"
+                            onClick={cerrar}
+                        >
+
+                            ✕
+
+                        </button>
+
+                    )}
+
+                </div>
 
             </div>
 

@@ -1,14 +1,36 @@
 import { useEffect, useState } from "react";
 import bancoApi from "../../api/bancoApi";
-import { formatoMoneda } from "../../utils/formatoMoneda";
-import "./Movimientos.css";
-import { ArrowLeft } from "lucide-react";
-import Header from "../../components/Header/Header";
 
-function Movimientos({ producto, volver }) {
+import "./Movimientos.css";
+
+import Header from "../../components/Header/Header";
+import BackButton from "../../components/common/BackButton";
+import { useScrollToTop } from "../../hooks/useScrollToTop";
+
+import TablaCuenta from "./TablaCuenta";
+import TablaCredito from "./TablaCredito";
+import TablaDebito from "./TablaDebito";
+import TabsMovimientos from "./TabsMovimientos";
+import OpcionesProducto from "./OpcionesProducto";
+import TablaCuotas from "./TablaCuotas";
+
+function Movimientos({
+
+    producto,
+
+    volver,
+
+    onAbrirFlujo
+
+}) {
+
+    useScrollToTop();
 
     const [datos, setDatos] = useState(null);
+
     const [resumenTarjeta, setResumenTarjeta] = useState(null);
+
+    const [tabActiva, setTabActiva] = useState("movimientos");
 
     useEffect(() => {
 
@@ -20,16 +42,32 @@ function Movimientos({ producto, volver }) {
 
                 if (producto.tipo === "CUENTA") {
 
-                    response = await bancoApi.get(`/movimientos/cuenta/${producto.id}`);
+                    response = await bancoApi.get(
+
+                        `/movimientos/cuenta/${producto.id}`
+
+                    );
+
                     setDatos(response.data);
 
                 }
 
-                if (producto.tipo === "CREDITO" || producto.tipo === "DEBITO") {
+                if (
 
-                    response = await bancoApi.get(`/tarjetas/${producto.id}/movimientos`);
+                    producto.tipo === "CREDITO" ||
+
+                    producto.tipo === "DEBITO"
+
+                ) {
+
+                    response = await bancoApi.get(
+
+                        `/tarjetas/${producto.id}/movimientos`
+
+                    );
 
                     setResumenTarjeta(response.data.tarjeta);
+
                     setDatos(response.data.movimientos);
 
                 }
@@ -37,6 +75,7 @@ function Movimientos({ producto, volver }) {
             } catch (error) {
 
                 console.log(error);
+
                 alert("Error cargando movimientos");
 
             }
@@ -47,15 +86,16 @@ function Movimientos({ producto, volver }) {
 
     }, [producto]);
 
-    if (!datos) return <h2>Cargando movimientos...</h2>;
 
-    datos.forEach(m => {
-    console.log(
-        m.descripcion,
-        m.monto,
-        typeof m.monto
-    );
-});
+    if (!datos) {
+
+        return <h2>Cargando movimientos...</h2>;
+
+    }
+
+    console.log("Producto:", producto);
+
+    console.log("Resumen:", resumenTarjeta);
 
     return (
 
@@ -65,253 +105,122 @@ function Movimientos({ producto, volver }) {
 
             <div className="movimientos-top">
 
-                <button
-                    className="btn-volver"
-                    onClick={volver}
-                >
-                    <ArrowLeft
-                        className="flecha-volver"
-                    />
+                <BackButton
 
-                    Volver
-                </button>
+                    onClick={volver}
+
+                    texto="Volver"
+
+                />
 
                 <h2 className="section-title">
+
                     Movimientos
+
                 </h2>
 
                 <div className="producto-nombre">
+
                     {producto.nombre}
+
                 </div>
 
             </div>
 
-            {producto.tipo === "CUENTA" && (
+            <TabsMovimientos
 
-                <table className="movimientos-table">
+                tabActiva={tabActiva}
 
-                    <thead>
+                cambiarTab={setTabActiva}
 
-                        <tr>
-                            <th>Fecha</th>
-                            <th>Detalle</th>
-                            <th>Importe</th>
-                            <th>Saldo total</th>
-                        </tr>
+                mostrarCuotas={producto.tipo === "CREDITO"}
 
-                    </thead>
+            />
 
-                    <tbody>
-
-                        {datos.map((movimiento) => (
-
-                            <tr key={movimiento.id}>
-
-                                <td>{movimiento.fecha}</td>
-
-                                <td>
-
-                                    {movimiento.descripcion}
-
-                                    {movimiento.comercio && (
-                                        <div className="movimiento-comercio">
-                                            {movimiento.comercio}
-                                        </div>
-                                    )}
-
-                                </td>
-
-                                <td
-                                    className={
-                                        movimiento.monto >= 0
-                                            ? "importe-positivo"
-                                            : "importe-negativo"
-                                    }
-                                >
-
-                                    {formatoMoneda(
-                                        movimiento.monto,
-                                        movimiento.moneda
-                                    )}
-
-                                </td>
-
-                                <td>
-
-                                    {formatoMoneda(
-                                        movimiento.saldo_resultante,
-                                        movimiento.moneda
-                                    )}
-
-                                </td>
-
-                            </tr>
-
-                        ))}
-
-                    </tbody>
-
-                </table>
-
-            )}
-
-            {producto.tipo === "CREDITO" && resumenTarjeta && (
+            {tabActiva === "movimientos" && (
 
                 <>
 
-                    <div className="tarjeta-resumen">
+                    {producto.tipo === "CUENTA" && (
 
-                        <div className="tarjeta-resumen-item">
+                        <TablaCuenta
 
-                            <div className="tarjeta-resumen-texto">
-                                Saldo en pesos
-                            </div>
+                            datos={datos}
 
-                            <div className="tarjeta-resumen-monto">
+                        />
 
-                                {formatoMoneda(
-                                    resumenTarjeta.saldo_pesos,
-                                    "ARS"
-                                )}
+                    )}
 
-                            </div>
+                    {producto.tipo === "DEBITO" && (
 
-                        </div>
+                        <TablaDebito
 
-                        <div className="tarjeta-resumen-item">
+                            datos={datos}
 
-                            <div className="tarjeta-resumen-texto">
-                                Saldo en dólares
-                            </div>
+                        />
 
-                            <div className="tarjeta-resumen-monto">
+                    )}
 
-                                {formatoMoneda(
-                                    resumenTarjeta.saldo_dolares,
-                                    "USD"
-                                )}
+                    {producto.tipo === "CREDITO" && (
 
-                            </div>
+                        <TablaCredito
 
-                        </div>
+                            datos={datos}
 
-                    </div>
+                            resumenTarjeta={resumenTarjeta}
 
-                    <table className="movimientos-table">
+                        />
 
-                        <thead>
-
-                            <tr>
-                                <th>Fecha</th>
-                                <th>Detalle</th>
-                                <th>Cuota</th>
-                                <th>Monto</th>
-                            </tr>
-
-                        </thead>
-
-                        <tbody>
-
-                            {datos.map((movimiento) => (
-
-                                <tr key={movimiento.id}>
-
-                                    <td>{movimiento.fecha}</td>
-
-                                    <td>
-
-                                        {movimiento.descripcion}
-
-                                        {movimiento.comercio && (
-                                            <div className="movimiento-comercio">
-                                                {movimiento.comercio}
-                                            </div>
-                                        )}
-
-                                    </td>
-
-                                    <td>
-
-                                        {movimiento.cuotas
-                                            ? `${movimiento.cuotas.actual}/${movimiento.cuotas.total}`
-                                            : "-"}
-
-                                    </td>
-
-                                    <td>
-
-                                        {formatoMoneda(
-                                            Math.abs(movimiento.monto),
-                                            movimiento.moneda
-                                        )}
-
-                                    </td>
-
-                                </tr>
-
-                            ))}
-
-                        </tbody>
-
-                    </table>
+                    )}
 
                 </>
 
             )}
-                        {producto.tipo === "DEBITO" && (
 
-                <table className="movimientos-table">
+            {tabActiva === "cuotas" &&
+                producto.tipo === "CREDITO" && (
 
-                    <thead>
+                <TablaCuotas
 
-                        <tr>
-                            <th>Fecha</th>
-                            <th>Detalle</th>
-                            <th>Importe</th>
-                        </tr>
+                    tarjeta={producto}
 
-                    </thead>
+                />
 
-                    <tbody>
+            )}
 
-                        {datos.map((movimiento) => (
+            {tabActiva === "opciones" && (
 
-                            <tr key={movimiento.id}>
+                <OpcionesProducto
 
-                                <td>
-                                    {movimiento.fecha}
-                                </td>
+                    producto={producto}
 
-                                <td>
+                    onFinanciarSaldo={() => {
 
-                                    {movimiento.descripcion}
+                        console.log("Producto:", producto);
 
-                                    {movimiento.comercio && (
+                        console.log("Resumen:", resumenTarjeta);
 
-                                        <div className="movimiento-comercio">
-                                            {movimiento.comercio}
-                                        </div>
+                        const tarjetaCompleta = {
 
-                                    )}
+                            ...producto,
 
-                                </td>
+                            ...resumenTarjeta
 
-                                <td className="importe-negativo">
+                        };
 
-                                    {formatoMoneda(
-                                        movimiento.monto,
-                                        movimiento.moneda
-                                    )}
+                        console.log("Tarjeta completa:", tarjetaCompleta);
 
-                                </td>
+                        onAbrirFlujo(
 
-                            </tr>
+                            "FINANCIAR",
 
-                        ))}
+                            tarjetaCompleta
 
-                    </tbody>
+                        );
 
-                </table>
+                    }}
+
+                />
 
             )}
 

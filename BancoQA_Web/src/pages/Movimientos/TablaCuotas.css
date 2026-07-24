@@ -1,0 +1,227 @@
+.tabla-cuotas-container {
+
+    background: #ffffff;
+
+    border-radius: 12px;
+
+    padding: 25px;
+
+    margin-top: 20px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+
+}
+
+.tabla-cuotas-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+
+}
+
+.tabla-cuotas-header h3 {
+
+    margin: 0;
+
+    color: #00539b;
+
+    font-size: 22px;
+
+    font-weight: 600;
+
+}
+
+.tabla-cuotas {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-bottom: 30px;
+
+}
+
+.tabla-cuotas thead {
+
+    background: #f3f5f8;
+
+}
+
+.tabla-cuotas th {
+
+    padding: 14px;
+
+    text-align: left;
+
+    color: #00539b;
+
+    font-weight: 600;
+
+    font-size: 15px;
+
+}
+
+.tabla-cuotas td {
+
+    padding: 14px;
+
+    border-bottom: 1px solid #e7e7e7;
+
+    font-size: 15px;
+
+}
+
+.tabla-cuotas tbody tr:hover {
+
+    background: #fafafa;
+
+}
+
+.cuotas-resumen {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+
+}
+
+.resumen-card {
+
+    flex: 1;
+
+    background: #f8f9fb;
+
+    border-radius: 10px;
+
+    padding: 20px;
+
+    border: 1px solid #e5e5e5;
+
+}
+
+.resumen-card .titulo {
+
+    color: #666;
+
+    font-size: 14px;
+
+    margin-bottom: 8px;
+
+}
+
+.resumen-card .valor {
+
+    color: #00539b;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+}
+
+.acciones-cuotas {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-bottom: 20px;
+
+}
+
+.btn-descargar {
+
+    background: #009fe3;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 28px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: .2s;
+
+}
+
+.btn-descargar:hover {
+
+    background: #0087c2;
+
+}
+
+.ver-mas-container {
+
+    display: flex;
+
+    justify-content: center;
+
+}
+
+.btn-ver-mas {
+
+    background: white;
+
+    border: 1px solid #00539b;
+
+    color: #00539b;
+
+    padding: 10px 24px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition: .2s;
+
+}
+
+.btn-ver-mas:hover {
+
+    background: #00539b;
+
+    color: white;
+
+}
+
+@media (max-width:900px){
+
+    .cuotas-resumen{
+
+        flex-direction:column;
+
+    }
+
+}
+
+@media (max-width:700px){
+
+    .tabla-cuotas{
+
+        display:block;
+
+        overflow-x:auto;
+
+        white-space:nowrap;
+
+    }
+
+}

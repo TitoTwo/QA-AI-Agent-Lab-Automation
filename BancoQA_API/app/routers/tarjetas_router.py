@@ -2,8 +2,9 @@ from fastapi import APIRouter, HTTPException
 
 from app.mock_data.tarjetas_data import tarjetas
 from app.mock_data.cuentas_data import cuentas
-from app.services.tarjeta_service import obtener_movimientos_tarjeta
 
+from app.services.tarjeta_service import obtener_movimientos_tarjeta
+from app.services.cuotas_service import obtener_cuotas_pendientes
 
 router = APIRouter(
     prefix="/tarjetas",
@@ -17,17 +18,16 @@ def obtener_tarjetas():
     return tarjetas
 
 
-
 @router.get("/cliente/{cliente_id}")
-def obtener_tarjetas_cliente(cliente_id:int):
+def obtener_tarjetas_cliente(cliente_id: int):
 
     tarjetas_cliente = []
 
     for tarjeta in tarjetas:
 
         if tarjeta["cliente_id"] == cliente_id:
-            tarjetas_cliente.append(tarjeta)
 
+            tarjetas_cliente.append(tarjeta)
 
     if not tarjetas_cliente:
 
@@ -36,24 +36,20 @@ def obtener_tarjetas_cliente(cliente_id:int):
             detail="Cliente sin tarjetas"
         )
 
-
     return tarjetas_cliente
 
 
-
 @router.get("/{tarjeta_id}/saldo")
-def consultar_saldo_tarjeta(tarjeta_id:int):
+def consultar_saldo_tarjeta(tarjeta_id: int):
 
     for tarjeta in tarjetas:
 
         if tarjeta["id"] == tarjeta_id:
 
-
             # Tarjeta débito
             if tarjeta["tipo"] == "DEBITO":
 
                 cuenta_id = tarjeta["cuenta_id"]
-
 
                 for cuenta in cuentas:
 
@@ -65,20 +61,16 @@ def consultar_saldo_tarjeta(tarjeta_id:int):
                             "saldo": cuenta["saldo"]
                         }
 
-
                 raise HTTPException(
                     status_code=404,
                     detail="Cuenta asociada no encontrada"
                 )
-
 
             # Tarjeta crédito
             raise HTTPException(
                 status_code=400,
                 detail="La tarjeta de crédito no posee saldo"
             )
-
-
 
     raise HTTPException(
         status_code=404,
@@ -87,19 +79,29 @@ def consultar_saldo_tarjeta(tarjeta_id:int):
 
 
 @router.get("/{tarjeta_id}/movimientos")
-def movimientos_tarjeta(tarjeta_id:int):
+def movimientos_tarjeta(tarjeta_id: int):
 
     return obtener_movimientos_tarjeta(tarjeta_id)
 
 
+# =====================================================
+# CUOTAS PENDIENTES
+# =====================================================
+
+@router.get("/{tarjeta_id}/cuotas")
+def cuotas_tarjeta(tarjeta_id: int):
+
+    return obtener_cuotas_pendientes(tarjeta_id)
+
+
 @router.get("/{tarjeta_id}")
-def obtener_tarjeta(tarjeta_id:int):
+def obtener_tarjeta(tarjeta_id: int):
 
     for tarjeta in tarjetas:
 
         if tarjeta["id"] == tarjeta_id:
-            return tarjeta
 
+            return tarjeta
 
     raise HTTPException(
         status_code=404,

@@ -1,0 +1,54 @@
+/* =====================================
+   PASO 2
+===================================== */
+
+.monto-financiar{
+
+    margin-top:12px;
+
+    font-size:36px;
+
+    font-weight:300;
+
+    color:#003b7a;
+
+}
+
+.select-common-container{
+
+    width:330px;
+
+    margin-top:20px;
+
+}
+
+.texto-cuotas{
+
+    margin-top:18px;
+
+    margin-left:4px;
+
+    width:330px;
+
+    color:#666;
+
+    font-size:14px;
+
+    line-height:22px;
+
+}
+
+/* =====================================
+   RESPONSIVE PASO 2
+===================================== */
+
+@media(max-width:768px){
+
+    .select-common-container,
+    .texto-cuotas{
+
+        width:100%;
+
+    }
+
+}

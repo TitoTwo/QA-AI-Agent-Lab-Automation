@@ -1,0 +1,216 @@
+/* =====================================
+   PASO 1
+===================================== */
+
+.radio-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    color:#003b7a;
+
+    font-weight:500;
+
+    user-select:none;
+
+}
+
+.radio-item input{
+
+    appearance:none;
+
+    -webkit-appearance:none;
+
+    width:20px;
+
+    height:20px;
+
+    border:2px solid #0057b8;
+
+    border-radius:50%;
+
+    position:relative;
+
+    cursor:pointer;
+
+}
+
+.radio-item input:checked::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:10px;
+
+    height:10px;
+
+    background:#0057b8;
+
+    border-radius:50%;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+}
+
+.radio-separador{
+
+    margin-top:36px;
+
+}
+
+.importe-maximo{
+
+    margin-left:34px;
+
+    margin-top:12px;
+
+    font-size:34px;
+
+    font-weight:300;
+
+    color:#003b7a;
+
+}
+
+.otro-importe-box{
+
+    margin-top:14px;
+
+}
+
+.input-pesos{
+
+    display:flex;
+
+    align-items:center;
+
+    width:330px;
+
+    margin-left:34px;
+
+    border:1px solid #cfcfcf;
+
+    border-radius:8px;
+
+    overflow:hidden;
+
+    background:white;
+
+}
+
+.input-pesos:focus-within{
+
+    border:2px solid #0057b8;
+
+}
+
+.simbolo-peso{
+
+    padding:0 16px;
+
+    color:#003b7a;
+
+    font-size:18px;
+
+    font-weight:600;
+
+}
+
+.input-importe{
+
+    flex:1;
+
+    border:none;
+
+    outline:none;
+
+    padding:16px 14px;
+
+    font-size:17px;
+
+    color:#003b7a;
+
+    appearance:textfield;
+
+    -moz-appearance:textfield;
+
+}
+
+.input-importe::-webkit-outer-spin-button,
+.input-importe::-webkit-inner-spin-button{
+
+    -webkit-appearance:none;
+
+    margin:0;
+
+}
+
+.texto-ayuda{
+
+    margin-top:18px;
+
+    margin-left:34px;
+
+    max-width:330px;
+
+    color:#666;
+
+    font-size:14px;
+
+    line-height:22px;
+
+}
+
+.mensaje-error{
+
+    margin-top:12px;
+
+    margin-left:34px;
+
+    max-width:330px;
+
+    color:#d32f2f;
+
+    font-size:14px;
+
+    font-weight:500;
+
+    line-height:20px;
+
+}
+
+/* =====================================
+   RESPONSIVE PASO 1
+===================================== */
+
+@media(max-width:768px){
+
+    .input-pesos{
+
+        width:100%;
+
+    }
+
+    .importe-maximo,
+    .texto-ayuda,
+    .mensaje-error{
+
+        margin-left:0;
+
+        max-width:100%;
+
+    }
+
+}
